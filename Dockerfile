@@ -27,7 +27,7 @@ RUN apt-get update \
 RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg \
     && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list \
     && apt-get update -y \
-    && apt-get install -y vagrant
+    && apt-get install -y vagrant=2.4.1-1
 
 # Install libvirt and related packages
 RUN apt-get install -y \
