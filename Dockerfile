@@ -35,7 +35,8 @@ RUN apt-get install -y \
     libvirt-daemon-system \
     qemu-kvm bridge-utils \
     dnsmasq \
-    libvirt-dev
+    libvirt-dev \
+    virt-manager
 
 # Install vagrant-libvirt plugin
 RUN vagrant plugin install vagrant-libvirt
