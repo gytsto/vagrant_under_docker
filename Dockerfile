@@ -2,7 +2,7 @@
 FROM ubuntu:jammy as base
 
 # Set systemd as entrypoint
-ENTRYPOINT ["/lib/systemd/systemd"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 # Install necessary packages
 RUN apt-get update \
@@ -21,6 +21,7 @@ RUN apt-get update \
     ufw \
     build-essential \
     rsync \
+    dumb-init \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Vagrant
